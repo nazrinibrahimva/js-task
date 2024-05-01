@@ -1,19 +1,33 @@
-function carpimArray(arr1, arr2) {
-    if (arr1.length !== arr2.length) {
-        console.error("Massivlərin uzunluqları bərabər olmalıdır!");
-        return;
-    }
-
-    let carpimArr = [];
-    for (let i = 0; i < arr1.length; i++) {
-        carpimArr.push(arr1[i] * arr2[i]);
-    }
-    return carpimArr;
+let emekhaqqi = 2500;
+let meblegh = 21000;
+let muddet = 7;
+let faiz;
+let ayligodenish;
+if(meblegh > emekhaqqi*10){
+    console.log('kredit ucun emekhaqqiniz kifayet deyil');
 }
-let arr1 = [1, 2, 3];
-let arr2 = [4, 5, 6];
-console.log(carpimArray(arr1, arr2));
-
-let arr3 = [1, 2, 3];
-let arr4 = [4, 5, 6, 7];
-carpimArray(arr3, arr4); 
+else{
+    if(muddet>36){
+        console.log('kredit elde ede bilmezsiz');
+    }
+    else{
+        if(ayligodenish > emekhaqqi*0.45){
+            console.log('kredit elde ede bilmezsiz');
+        }
+        else{
+            if(0 < muddet && 12 > muddet){
+                faiz = 13;
+                ayligodenish = (meblegh +(meblegh*faiz)/100)/muddet;
+            }
+            if(12 < muddet && 24 > muddet){
+                faiz = 15;
+                ayligodenish = (meblegh +(meblegh*faiz)/100)/muddet;
+            }
+            if(24 < muddet && 36 > muddet){
+                faiz = 17;
+                ayligodenish = (meblegh +(meblegh*faiz)/100)/muddet;
+            }
+            console.log(meblegh + "azn mebleg size" + faiz + "faizle" + muddet + "ayligh" + ayligodenish + "odenisle verilir");
+        }
+    }
+}
